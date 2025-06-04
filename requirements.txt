@@ -4,6 +4,8 @@ vectorbt
 pandas
 numpy~=2.2.6
 matplotlib~=3.10.3
-
 loguru~=0.7.3
 asyncio~=3.4.3
+fastapi
+uvicorn
+fastapi-knife4j
