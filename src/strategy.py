@@ -31,7 +31,8 @@ class MarketMakingStrategy:
             price_delta_threshold: float = 0.5,
             api_key: Optional[str] = None,
             secret: Optional[str] = None,
-            enableRateLimit: bool = True
+            enableRateLimit: bool = True,
+            sandbox_mode: bool = True
     ):
         self.symbol = symbol
         self.order_qty = order_qty
@@ -51,7 +52,7 @@ class MarketMakingStrategy:
             'apiKey': self.api_key,
             'secret': self.secret,
         })
-        self.exchange.set_sandbox_mode(True)
+        self.exchange.set_sandbox_mode(sandbox_mode)
 
         self.tick_size: Optional[float] = None
         self.precision: Optional[int] = None
@@ -163,11 +164,11 @@ class MarketMakingStrategy:
         # 然后再保证 raw_bid_price < best_bid 几一个 tick
         raw_bid_price = (reservation_price - self.half_spread)
         if raw_bid_price >= best_bid:
-            raw_bid_price = best_bid - self.tick_size
+            raw_bid_price = best_bid# - self.tick_size
         # raw_ask_price = max((reservation_price + self.half_spread), best_ask)
         raw_ask_price = (reservation_price + self.half_spread)
         if raw_ask_price <= best_ask:
-            raw_ask_price = best_ask + self.tick_size
+            raw_ask_price = best_ask# + self.tick_size
 
         # 7) 四舍五入到最近 tick
         bid_tick = math.floor(raw_bid_price / self.tick_size)

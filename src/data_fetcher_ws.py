@@ -13,6 +13,7 @@ class OrderBookStreamer:
             limit: int = 100,
             depth: float = 0.025,
             window_minutes: float = 10.0,
+            sandbox_mode: bool = True
     ):
         self.symbol = symbol
         self.limit = limit
@@ -23,7 +24,7 @@ class OrderBookStreamer:
             'enableRateLimit': True,
             'options': {'defaultType': 'future'},
         })
-        self.exchange.set_sandbox_mode(True)
+        self.exchange.set_sandbox_mode(sandbox_mode)
 
     async def stream(self) -> AsyncGenerator[Tuple[int, List, List, float], None]:
         """

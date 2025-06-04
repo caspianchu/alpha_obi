@@ -3,13 +3,14 @@ import json
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from .config import StrategyConfig
+from src.config import StrategyConfig
 
 # 默认配置文件路径
 CONFIG_PATH = Path("config/strategy_config.json").resolve()
 
 # 读取初始配置
 config = StrategyConfig.from_json(str(CONFIG_PATH))
+
 
 class StrategyConfigModel(BaseModel):
     symbol: str
@@ -31,7 +32,7 @@ class StrategyConfigModel(BaseModel):
 app = FastAPI(title="Strategy Config API")
 
 try:
-    from fastapi_knife4j import Knife4j
+    from fastapi import Knife4j
 
     Knife4j(app)
 except Exception:

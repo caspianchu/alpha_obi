@@ -11,7 +11,8 @@ async def main():
         symbol=cfg.symbol,
         limit=cfg.limit,
         depth=cfg.depth,
-        window_minutes=cfg.window_minutes
+        window_minutes=cfg.window_minutes,
+        sandbox_mode=cfg.sandbox_mode
     )
     strategy = MarketMakingStrategy(
         symbol=cfg.symbol,
@@ -23,6 +24,7 @@ async def main():
         api_key=cfg.api_key,
         secret=cfg.secret,
         price_delta_threshold=cfg.price_delta_threshold,
+        sandbox_mode=cfg.sandbox_mode
     )
     # 先 load_markets 拿到 tick_size/precision
     await strategy.initialize()

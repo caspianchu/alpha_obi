@@ -1,13 +1,14 @@
 {
-  "symbol": "BTC/USDT:USDT",
-  "order_qty": 0.010,
-  "c1": 80.0,
-  "half_spread": 40.0,
-  "skew": 8,
+  "symbol": "ME/USDT:USDT",
+  "order_qty": 200,
+  "c1": 0.006,
+  "half_spread": 0.003,
+  "skew": 0.0003,
   "limit": 100,
   "depth": 0.025,
   "window_minutes": 10.0,
-  "api_key": "0d0885c63d506749f9f172cae0ac104c3cb8a141f39d9df3ace8d8764f0f63c5",
-  "secret": "788e88b1083ecff1ada67ffc678c5f306df1a56641f6d119df3aeca5c02882c4",
-  "price_delta_threshold": 0.1
+  "api_key": "znEtEhC2THLXRKaOEwYDmRVT5JI4uVq7pVnRSG7NvoxQbDkmBKqB3MnrZkVLHnpj",
+  "secret": "x4gwGYz4Yey8wTbKECPCiF6ipYKjCGyyPcIwQVoRTQj6OuNJveqDTwPpNP4QQ6tj",
+  "price_delta_threshold": 0.1,
+  "sandbox_mode": false
 }

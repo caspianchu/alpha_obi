@@ -18,6 +18,7 @@ class StrategyConfig:
     api_key: str
     secret: str
     price_delta_threshold: float
+    sandbox_mode: bool
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]):
@@ -33,6 +34,7 @@ class StrategyConfig:
             api_key=str(data.get("api_key", "")),
             secret=str(data.get("secret", "")),
             price_delta_threshold=float(data.get("price_delta_threshold", 0.5)),
+            sandbox_mode=data.get("sandbox_mode", True)
         )
 
     @classmethod
@@ -69,4 +71,5 @@ class StrategyConfig:
             "api_key": self.api_key,
             "secret": self.secret,
             "price_delta_threshold": self.price_delta_threshold,
+            "sandbox_mode": self.sandbox_mode
         }
