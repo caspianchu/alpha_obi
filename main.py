@@ -1,7 +1,7 @@
 import asyncio
 import uvicorn
 
-from src.api import app, config as api_config
+from src.web.api import app, config as api_config
 from src.data_fetcher_ws import OrderBookStreamer
 from src.strategy import MarketMakingStrategy
 
